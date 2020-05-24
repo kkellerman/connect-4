@@ -14,4 +14,13 @@ createPlayers() {
                     new players('Player 2', 2, '#e59a13')];
     return players;
                 }
+
+//Gets game ready for play
+    startGame(){
+    
+
+        }
+
+
+
 }
