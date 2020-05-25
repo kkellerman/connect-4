@@ -10,9 +10,8 @@ class Space{
 
     //Render Method
 drawSVGSpace(){
-
-const svgSpace = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-
+const svgSpace = document.createElementNS("http://www.w3.org/2000/svg", "circle"); //new element created
+//attirbutes of element
 svgSpace.setAttributeNS(null, "id", this.id);
 svgSpace.setAttributeNS(null, "cx", (this.x * this.diameter) + this.radius);
 svgSpace.setAttributeNS(null, "cy", (this.y * this.diameter) + this.radius);
