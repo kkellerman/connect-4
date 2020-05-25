@@ -21,6 +21,14 @@ createPlayers() {
 
         }
 
+        /**Returns active player @return {Object} player - The active player
+        This getter method should return the Player object whose active property is equal to true*/
+    get activePlayer()
+        {
+        return this.players.find(player => player.active);
+        }
+
+
 
 
 }
