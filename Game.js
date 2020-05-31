@@ -15,9 +15,11 @@ createPlayers() {
     return players;
                 }
 
-//Gets game ready for play
+//Starts Game
     startGame(){
-    
+        this.board.drawHTMLBoard();
+        this.activePlayer.activeToken.drawHTMLBoard();
+        this.ready= true;
 
         }
 
@@ -28,7 +30,5 @@ createPlayers() {
         return this.players.find(player => player.active);
         }
 
-
-
-
+     
 }

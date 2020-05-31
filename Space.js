@@ -22,5 +22,5 @@ svgSpace.setAttributeNS(null, "stroke", "none");
 document.getElementById("mask").appendChild(svgSpace);   
 
 
-            }
+     }
 }
