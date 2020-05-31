@@ -16,5 +16,6 @@ const game = new Game();
 
   /**  Listen for keyboard presses */
 document.addEventListener('keydown', function(event){
+  game.handleKeydown(event);
   console.log(event.key); //outputs a string naming the pressed key 
 });
