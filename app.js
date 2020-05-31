@@ -13,3 +13,8 @@ const game = new Game();
   });
 
   
+
+  /**  Listen for keyboard presses */
+document.addEventListener('keydown', function(event){
+  console.log(event.key); //outputs a string naming the pressed key 
+});
