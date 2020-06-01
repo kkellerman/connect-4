@@ -37,13 +37,12 @@ createPlayers() {
         */
        handleKeydown(e) {  
            if(this.ready){
-               if(e.key) === "ArrowLeft") {
-                   // move left
+               if(e.key === "ArrowLeft") {
+                 this.activePlayer.activeToken.moveLeft();   // move left
                } else if (e.key === "ArrowRight"){
-                   //move right
+                this.activePlayer.activeToken.moveRight(this.board.columns);
                } else if (e.key === "ArrowDown") {
-               //play token
-   
+                   //play token
            } 
       
         }

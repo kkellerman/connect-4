@@ -4,6 +4,7 @@ class Token{
         this.owner = owner;
         this.id = `token-${index}-${owner.id}`; //temperate literal
         this.dropped = false;  //default to false because at start no tokens dropped
+        this.columnLocation = 0;  //moveLeft & moveRight will update this value
    
     }
 
@@ -15,7 +16,15 @@ class Token{
         return document.getElementById(this.id);
     }
 
-    /**
+
+     /** 
+     * Gets left offset of html element.
+     * @return  {number}   Left offset of token object's htmlToken.
+     */
+    get offsetLeft(){
+        return (this.htmlToken.offsetLeft)
+    }
+     /**
      * Draws new HTML token
      */
     drawHTMLToken(){
@@ -24,8 +33,32 @@ class Token{
         token.setAttribute('id', this.id);
         token.setAttribute('class', 'token');
         token.style.backgroundColor=this.owner.color;
-
-
     }
+    
+    /**Moves html token one column to left. */
+    moveLeft(){ 
+        if(this.columnLocation >0){
+            this.htmlToken.style.left = this.offsetLeft -76;
+            this.columnLocation-=1;
+        }
+    }
+
+    /**Move html token one column to right. */
+    moveRight(columns){
+        if(this.columnLocation < columns - 1){
+            this.htmlToken.style.left = this.offsetLeft + 76;
+            this.columnLocation +=1;
+
+        }
+    }
+}
+
+
+
+   
+
+
+
+
 
 }
