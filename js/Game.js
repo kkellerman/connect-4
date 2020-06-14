@@ -9,11 +9,20 @@ class Game{
          * Creates two player objects
          * @return  {Array}    An array of two Player objects.
          */
-createPlayers() {
+
+           /**Returns active player @return {Object} player - The active player
+        This getter method should return the Player object whose active property is equal to true*/
+        get activePlayer()
+        {
+        return this.players.find(player => player.active);
+        }
+
+
+       createPlayers() {
     const players = [new players('Player 1', 1, '#e15258',true),
                     new players('Player 2', 2, '#e59a13')];
     return players;
-                }
+    }
 
 //Starts Game
     startGame(){
@@ -23,13 +32,7 @@ createPlayers() {
 
         }
 
-        /**Returns active player @return {Object} player - The active player
-        This getter method should return the Player object whose active property is equal to true*/
-    get activePlayer()
-        {
-        return this.players.find(player => player.active);
-        }
-
+    
        
        /**
         * Branches code, depending on what key player presses
@@ -46,6 +49,28 @@ createPlayers() {
            } 
       
         }
-    }
+    
+        playToken(){
+            let spaces = this.board.spaces;
+            let activeToken = this.activePlayer.activeToken;
+            let targetColumn = spaces[activeToken.columnLocation];
+            let targetSpace = null;
+            
+            for (let space of targetColumn){
+                if(space.token === null) {
+                    targetSpace = space;
+
+                }
+            }
+            
+            if (targetSpace !== null) {
+                game.ready = false;
+                activeToken.drop(targetSpace);
+            }
+
+        
+     }
+
+}
 }
 
