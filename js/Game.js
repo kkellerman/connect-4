@@ -63,7 +63,6 @@ class Game{
             for (let space of targetColumn){
                 if(space.token === null) {
                     targetSpace = space;
-
                 }
             }
             

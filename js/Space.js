@@ -14,9 +14,8 @@ class Space{
  * @param {Object} token - The dropped token
  */
 mark(token){
-
-
-
+    this.token = token;
+    }
 }
 
 
