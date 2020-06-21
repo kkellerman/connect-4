@@ -10,7 +10,7 @@ class Game{
          */
 
            /**Returns active player @return {Object} player - The active player
-        This getter method should return the Player object whose active property is equal to true*/
+        *This getter method should return the Player object whose active property is equal to true*/
         get activePlayer() {
             return this.players.find(player => player.active);
         }
@@ -29,7 +29,7 @@ class Game{
 //Initialize Game
     startGame(){
         this.board.drawHTMLBoard();
-        this.activePlayer.activeToken.drawHTMLBoard();
+        this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
         }
 
@@ -39,7 +39,8 @@ class Game{
         * Branches code, depending on what key player presses
         * @param   {Object}    e - Keydown event object
         */
-       handleKeydown(e) {  
+       
+        handleKeydown(e) {  
            if(this.ready){
                if(e.key === "ArrowLeft") {
                  this.activePlayer.activeToken.moveLeft();   // move left
@@ -69,6 +70,7 @@ class Game{
             }
             
             if (targetSpace !== null) {
+                const game = this;
                 game.ready = false;
                
                 activeToken.drop(targetSpace, function(){

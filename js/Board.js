@@ -25,12 +25,11 @@ createSpaces(){
 }
 
 //   Draws associated SVG spaces for all game spaces.
-drawHTMLBoard(){
-        for (let column of this.spaces){
-            for (let space of column){
+drawHTMLBoard() {
+    for (let column of this.spaces) {
+        for (let space of column) {
             space.drawSVGSpace();
-            }
-
         }
     }
+} 
 } //End Class
