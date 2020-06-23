@@ -1,9 +1,10 @@
 class Board{
          //start constructors for all properties
-         constructor(){     //no arguments because board is static
-            this.row = 6;
-            this.columns=7;
-            this.spaces=this.createSpaces();
+         //no arguments because board is static
+         constructor() {
+            this.rows = 6;
+            this.columns = 7;
+            this.spaces = this.createSpaces();
         }
 /** 
  * Generates 2D array of spaces. 
