@@ -35,20 +35,19 @@ class Game{
 
     
        
+
        /**
         * Branches code, depending on what key player presses
         * @param   {Object}    e - Keydown event object
         */
-       
-        handleKeydown(e) {  
-           if(this.ready){
-               if(e.key === "ArrowLeft") {
-                 this.activePlayer.activeToken.moveLeft();   // move left
+    handleKeydown(e) {  
+        if(this.ready){
+           if(e.key === "ArrowLeft") {
+              this.activePlayer.activeToken.moveLeft();   // move left
                } else if (e.key === "ArrowRight"){
                 this.activePlayer.activeToken.moveRight(this.board.columns);
                } else if (e.key === "ArrowDown") {
-                this.playToken();
-                   //play token
+                this.playToken();            //play token
            } 
       
         }
@@ -63,8 +62,8 @@ class Game{
             let targetColumn = spaces[activeToken.columnLocation];
             let targetSpace = null;
             
-            for (let space of targetColumn){
-                if(space.token === null) {
+            for (let space of targetColumn) {
+                if (space.token === null) {
                     targetSpace = space;
                 }
             }
