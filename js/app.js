@@ -1,4 +1,3 @@
-
 const game = new Game();
 //listeners & Event handlers bridge between the visual and objects files
 //Listens for click on `#begin-game` and calls startGame() on game object
