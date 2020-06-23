@@ -22,7 +22,7 @@ class Token{
      * @return  {number}   Left offset of token object's htmlToken.
      */
     get offsetLeft(){
-        return (this.htmlToken.offsetLeft)
+        return this.htmlToken.offsetLeft;
     }
      /**
      * Draws new HTML token
@@ -43,12 +43,13 @@ class Token{
         }
     }
 
-    /**Move html token one column to right. */
-    moveRight(columns){
-        if(this.columnLocation < columns - 1){
+      /** Moves html token one column to right.
+     * @param   {number}    columns - number of columns on the game board */    
+     moveRight(columns) {
+        if (this.columnLocation < columns - 1) {
+            console.log(this.offsetLeft);
             this.htmlToken.style.left = this.offsetLeft + 76;
-            this.columnLocation +=1;
-
+            this.columnLocation += 1;
         }
     }
 
@@ -62,10 +63,5 @@ class Token{
         $(this.htmlToken).animate({
             top: (target.y * target.diameter)
         }, 750, 'easeOutBounce', reset);
-
     }
-
-    
-
-
 }
